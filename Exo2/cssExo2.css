@@ -1,0 +1,39 @@
+body {
+  background-color: khaki;
+}
+h1 {
+  color: brown;
+}
+.pGrise {
+  color: greenyellow;
+}
+.pRed {
+  color: aqua;
+}
+.information {
+  padding: 10px;
+  margin-top: 10px;
+  color: red;
+  border: 2px solid goldenrod;
+  background-color: green;
+}
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: salmon;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+li a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+li a:hover{
+    background-color: turquoise;
+}
