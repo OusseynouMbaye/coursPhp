@@ -3,10 +3,10 @@ include("./common/menu.php");
 include("./common/header.php");
 
 
-$personnages=[
+$personnages = [
     $p1 = [
         "Nom" => "Sofia",
-        "Img"=> "sofia.JPG",
+        "Img" => "sofia.JPG",
         "Age" => 5,
         "Sexe" => false,
         "force" => 3,
@@ -14,7 +14,7 @@ $personnages=[
     ],
     $p2 = [
         "Nom" => "Amina",
-        "Img"=> "amina.JPG",
+        "Img" => "amina.JPG",
         "Age" => 2,
         "Sexe" => false,
         "Force" => 8,
@@ -22,7 +22,7 @@ $personnages=[
     ],
     $p3 = [
         "Nom" => "Watson",
-        "Img"=> "watson.JPG",
+        "Img" => "watson.JPG",
         "Age" => 1,
         "Sexe" => true,
         "Force" => 9,
@@ -36,32 +36,32 @@ $personnages=[
 <!-- Content Php -->
 <?php
 
-    foreach ($personnages as  $perso) {
-        echo "<div class='gauche'> ";
-            echo "<img src='sources/images/".$perso['Img'] . " 'alt='homme' width='200' height='250'/>";
-        echo "</div>";
-        echo "<div class='gauche'> ";
-            showPerso($perso);
-        echo "</div>";
-        echo "<div class='clearB'></div>";
-        echo"<br/>";
-    }
-   
+foreach ($personnages as  $perso) {
+    echo "<div class='gauche'> ";
+    echo "<img src='sources/images/" . $perso['Img'] . " 'alt='homme' width='200' height='250'/>";
+    echo "</div>";
+    echo "<div class='gauche'> ";
+    showPerso($perso);
+    echo "</div>";
+    echo "<div class='clearB'></div>";
+    echo "<br/>";
+}
+
+
 function   showPerso($personnage)
 {
     foreach ($personnage as $index => $value) {
-            if ($index!=="Img" && $index!=="Sexe") {
-                echo "<b>". $index . "</b> : ". $value ."<br/>" ;
-            }
-            if ($index==="Sexe") {
-               if ($value ===true) {
-                   echo "<b>". $index . "</b> : ". "Homme <br/>";
-               }else {
-                   echo "<b>". $index . "</b> : " ."Femme <br/>";
-               }
-            }
-        
+        if ($index !== "Img" && $index !== "Sexe") {
+            echo "<b>" . $index . "</b> : " . $value . "<br/>";
         }
+        if ($index === "Sexe") {
+            if ($value === true) {
+                echo "<b>" . $index . "</b> : " . "Homme <br/>";
+            } else {
+                echo "<b>" . $index . "</b> : " . "Femme <br/>";
+            }
+        }
+    }
 }
 
 ?>
