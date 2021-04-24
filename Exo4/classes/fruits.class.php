@@ -18,6 +18,10 @@ class Fruit
         $this->poids = $poids;
         $this->prix = $this->getPriceFruits($name);
     }
+    public function getName()
+    {
+        return $this->name;
+    }
     //function private qui sera accessible just par l'objet prix pourquoi il faut utiliser le this
     function getPriceFruits($name)
     {
