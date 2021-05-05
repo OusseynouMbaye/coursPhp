@@ -1,6 +1,8 @@
 <?php
 include("./common/menu.php");
 include("./common/header.php");
+// require_once '../class/Autoloader.php';
+// Autoloader::register();
 
 ?>
 <!-- Content Html -->
