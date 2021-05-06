@@ -31,6 +31,24 @@ include("./common/header.php");
         
       $res = $p->saveInDB();
       if ($res) {
+              
+               $nbPommes = (int)$_POST['nb_pommes'];
+               $nbCerises = (int)$_POST['nb_cerises'];
+               $cpt = 1;
+               $nbFruitInDb = Fruit::generateUniqueId();
+               for ($i=0; $i <$nbPommes ; $i++) { 
+                $fruit = new Fruit("pomme ".($nbFruitInDb+$cpt), rand(120,150),20);
+                $fruit->saveInDB($p->getId());
+                $p->addFruit($fruit);
+                $cpt++;
+               }
+               for ($i=0; $i <$nbCerises ; $i++) { 
+                $fruit= new Fruit("cerise ".($nbFruitInDb+$cpt), rand(15,25),5);
+                $fruit->saveInDB($p->getId());
+                $p->addFruit($fruit);
+                $cpt++;
+               }
+          echo $p;
           echo "OK";
       }else{
           echo "L'ajout n'a pas fonctionné";

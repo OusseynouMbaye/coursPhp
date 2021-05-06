@@ -14,6 +14,9 @@ class Panier
       $this->identifiant = $identifant;
       $this->nomClient = $nomClient;
     }
+    public function getId(){
+        return $this->identifiant;
+    }
 
         public function setFruitToPanierFromDB()
     {
@@ -29,7 +32,15 @@ class Panier
         
        
     }
-
+    public function addFruit($fruit=null){
+        if(preg_match("/cerise/",$fruit->getName()))
+        {
+         $this->apples[] = $fruit;
+        }else  if(preg_match("/pomme/",$fruit->getName()))
+        {
+            $this->cherries[] = $fruit; 
+        }
+    }
 
     public function __toString()
     {

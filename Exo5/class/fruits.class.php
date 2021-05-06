@@ -1,4 +1,5 @@
 <?Php
+require_once("class/fruits.manager.php");
 class Fruit
 {
 
@@ -28,6 +29,10 @@ class Fruit
 
         return $affichage;
     }
+    public  function saveInDB($idPanier){
+      return  FruitManager::insertInToDB($this->name,$this->poids,$this->prix,$idPanier);
+    }
+
     public function getShowImageFruit()
     {
           if (preg_match("/cerise/",$this->name)) {
@@ -38,4 +43,8 @@ class Fruit
         }
 
      }
+
+     public static function generateUniqueId(){
+        return FruitManager::getNbFruitsInDB() +1;
+    }
 }
